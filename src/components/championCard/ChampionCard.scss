@@ -1,0 +1,14 @@
+.championCard {
+  width: 18%;
+  margin-bottom: 2%;
+  position: relative;
+
+  &_image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
