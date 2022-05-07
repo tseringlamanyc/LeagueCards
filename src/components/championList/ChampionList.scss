@@ -1,6 +1,7 @@
 .champList {
-  margin: 15px;
+  position: relative;
   display: flex;
+  justify-content: center;
+  padding: 20px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
