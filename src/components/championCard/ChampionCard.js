@@ -12,8 +12,6 @@ function ChampionCard({ champion }) {
 
     res = res.replace(/[^a-zA-Z]/g, "");
 
-    console.log(`This is ${res}`);
-
     switch (res) {
       case "Wukong":
         res = "MonkeyKing";
@@ -29,6 +27,9 @@ function ChampionCard({ champion }) {
         break;
       case "Reksai":
         res = "RekSai";
+        break;
+      case "RenataGlasc":
+        res = "Renata";
         break;
       default:
         return res;

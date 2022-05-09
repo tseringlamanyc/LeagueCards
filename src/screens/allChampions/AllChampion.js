@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ChampionList from "../../components/championList/ChampionList";
 
-const url = "https://ddragon.leagueoflegends.com/cdn/11.23.1/data/en_US/champion.json";
+const url = "https://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion.json";
 
 function AllChampion() {
   const [allChamps, setAllChamps] = useState([]);
