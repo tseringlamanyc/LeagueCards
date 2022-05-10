@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { refactorName } from "../../util/string_utils";
+import Abilities from "../abilities/Abilities";
 
 import "./ChampionDetail.scss";
 
@@ -8,41 +10,6 @@ function ChampionDetail() {
   let champName = params.name;
 
   const [championData, setChampionData] = useState({});
-
-  const refactorName = (name) => {
-    let res = name;
-
-    if (res.includes("'")) {
-      res = res.charAt(0).toUpperCase() + res.slice(1).toLowerCase();
-    }
-
-    res = res.replace(/[^a-zA-Z]/g, "");
-
-    switch (res) {
-      case "Wukong":
-        res = "MonkeyKing";
-        break;
-      case "Kogmaw":
-        res = "KogMaw";
-        break;
-      case "LeBlanc":
-        res = "Leblanc";
-        break;
-      case "NunuWillump":
-        res = "Nunu";
-        break;
-      case "Reksai":
-        res = "RekSai";
-        break;
-      case "RenataGlasc":
-        res = "Renata";
-        break;
-      default:
-        return res;
-    }
-
-    return res;
-  };
 
   champName = refactorName(champName);
 
@@ -62,7 +29,7 @@ function ChampionDetail() {
         <>
           <div className="champDetail_image">
             <img
-              src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champName}_1.jpg`}
+              src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champName}_0.jpg`}
             />
           </div>
 
@@ -73,20 +40,7 @@ function ChampionDetail() {
 
           <div className="champDetail_lore">{championData.lore}</div>
 
-          <div className="champDetail_abilities">
-            <h3>Abilites</h3>
-            {championData.spells.map((spell) => {
-              return (
-                <>
-                  <div className="champDetail_abilitySet">
-                    <img
-                      src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/${spell.image.full}`}
-                    />
-                  </div>
-                </>
-              );
-            })}
-          </div>
+          <Abilities abilityData={championData.spells} />
 
           <div className="champDetail_skins">
             <h3>Skins</h3>
