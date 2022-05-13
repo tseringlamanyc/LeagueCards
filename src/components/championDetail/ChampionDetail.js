@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { refactorName } from "../../util/string_utils";
 import Abilities from "../abilities/Abilities";
+import SkinList from "../skinList/SkinList";
+import YoutubeEmbed from "../spotlightVideo/SpotlightVideo";
 
 import "./ChampionDetail.scss";
 
@@ -28,9 +30,7 @@ function ChampionDetail() {
       {Object.keys(championData).length > 0 && (
         <>
           <div className="champDetail_image">
-            <img
-              src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champName}_0.jpg`}
-            />
+            <YoutubeEmbed />
           </div>
 
           <div className="champDetail_name">
@@ -40,17 +40,12 @@ function ChampionDetail() {
 
           <div className="champDetail_lore">{championData.lore}</div>
 
-          <Abilities abilityData={championData.spells} />
+          <Abilities abilityData={championData.spells} passiveData={championData.passive} />
+
+          <h3>Skins</h3>
 
           <div className="champDetail_skins">
-            <h3>Skins</h3>
-            {championData.skins.map((skin) => {
-              return (
-                <>
-                  <div>{skin.name}</div>
-                </>
-              );
-            })}
+            <SkinList champName={champName} skins={championData.skins} />
           </div>
         </>
       )}
