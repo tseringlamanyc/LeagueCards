@@ -12,10 +12,20 @@ function ChampionDetail() {
   let champName = params.name;
 
   const [championData, setChampionData] = useState({});
+  const [embed, setEmbed] = useState("6riDJMI-Y8U");
 
   champName = refactorName(champName);
 
   let url = `https://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion/${champName}.json`;
+  let videoEndpoint = `https://league-backend-video.herokuapp.com/data`;
+
+  useEffect(() => {
+    fetch(videoEndpoint)
+      .then((response) => response.json())
+      .then((data) => {
+        setEmbed(data["champions"][champName].embed);
+      });
+  });
 
   useEffect(() => {
     fetch(url)
@@ -30,7 +40,7 @@ function ChampionDetail() {
       {Object.keys(championData).length > 0 && (
         <>
           <div className="champDetail_image">
-            <YoutubeEmbed />
+            <YoutubeEmbed embed={embed} />
           </div>
 
           <div className="champDetail_name">

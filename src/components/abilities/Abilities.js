@@ -38,14 +38,14 @@ function Abilities({ abilityData, passiveData }) {
       <div className={selectedStyle} onClick={colorSelectedImg}>
         {abilityData.map((spell, index) => {
           return (
-            <>
+            <div key={index}>
               <div className="championAbility__detail" onClick={(e) => updateText(e)}>
                 <img
                   id={index}
                   src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/${spell.image.full}`}
                 />
               </div>
-            </>
+            </div>
           );
         })}
       </div>
