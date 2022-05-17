@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import ChampionList from "../../components/championList/ChampionList";
 import Navbar from "../../components/navBar/Navbar";
+import EmptyList from "../../components/views/EmptyList";
+import LoadingView from "../../components/views/LoadingView";
 import { refactorName } from "../../util/string_utils";
 
 const url = "https://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion.json";
 
 function AllChampion() {
+  const [loading, setLoading] = useState(true);
   const [allChamps, setAllChamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredChamps, setFilteredChamps] = useState([]);
@@ -16,13 +19,12 @@ function AllChampion() {
       .then((data) => {
         setAllChamps(Object.values(data.data));
       });
+    setLoading(false);
   };
 
   useEffect(() => {
     fetChamps();
   }, []);
-
-  console.log("render");
 
   useEffect(() => {
     if (searchTerm) {
@@ -42,8 +44,14 @@ function AllChampion() {
     <div>
       <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      {searchTerm.length > 0 && filteredChamps.length > 0 && (
+      {loading && <LoadingView />}
+
+      {!loading && searchTerm.length > 0 && filteredChamps.length > 0 && (
         <ChampionList champions={filteredChamps} />
+      )}
+
+      {!loading && searchTerm.length > 0 && filteredChamps.length === 0 && (
+        <EmptyList searchTerm={searchTerm} />
       )}
 
       {allChamps.length > 0 && !searchTerm && <ChampionList champions={allChamps} />}

@@ -1,6 +1,28 @@
 .championAbility {
+  &_passive div,
+  img {
+    margin-bottom: 10px;
+  }
+
   &__list {
     display: flex;
     gap: 50px;
+  }
+
+  &_selected {
+    display: flex;
+    gap: 50px;
+  }
+
+  &_selected img:active {
+    border: 1px solid white;
+  }
+
+  &__list div {
+    margin-bottom: 10px;
+  }
+
+  &_title div {
+    margin-bottom: 10px;
   }
 }

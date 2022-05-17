@@ -4,6 +4,7 @@ import "./Ability.scss";
 function Abilities({ abilityData, passiveData }) {
   const [abilityTitle, setAbilityTitle] = useState("");
   const [abilityDescription, setAbilityDescription] = useState("");
+  const [selectedStyle, setSelectedStyle] = useState("championAbility__list");
 
   useEffect(() => {
     updateText();
@@ -17,7 +18,9 @@ function Abilities({ abilityData, passiveData }) {
     setAbilityDescription(desc);
   };
 
-  console.log(passiveData.name);
+  const colorSelectedImg = () => {
+    setSelectedStyle("championAbility_selected");
+  };
 
   return (
     <div className="championAbility">
@@ -32,7 +35,7 @@ function Abilities({ abilityData, passiveData }) {
 
       <h2>Abilites</h2>
 
-      <div className="championAbility__list">
+      <div className={selectedStyle} onClick={colorSelectedImg}>
         {abilityData.map((spell, index) => {
           return (
             <>
@@ -46,8 +49,10 @@ function Abilities({ abilityData, passiveData }) {
           );
         })}
       </div>
-      <div>{abilityTitle}</div>
-      <div>{abilityDescription}</div>
+      <div className="championAbility_title">
+        <div>{abilityTitle}</div>
+        <div>{abilityDescription}</div>
+      </div>
     </div>
   );
 }
