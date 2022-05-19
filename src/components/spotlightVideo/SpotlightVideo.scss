@@ -1,0 +1,31 @@
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 33%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+@media only screen and (max-width: 400px) {
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 70%;
+    position: relative;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}

@@ -12,7 +12,7 @@ function ChampionDetail() {
   let champName = params.name;
 
   const [championData, setChampionData] = useState({});
-  const [embed, setEmbed] = useState("6riDJMI-Y8U");
+  const [embed, setEmbed] = useState("");
 
   champName = refactorName(champName);
 
@@ -38,8 +38,8 @@ function ChampionDetail() {
   return (
     <div className="champDetail">
       {Object.keys(championData).length > 0 && (
-        <>
-          <div className="champDetail_image">
+        <div>
+          <div className="champDetail_video">
             <YoutubeEmbed embed={embed} />
           </div>
 
@@ -57,7 +57,7 @@ function ChampionDetail() {
           <div className="champDetail_skins">
             <SkinList champName={champName} skins={championData.skins} />
           </div>
-        </>
+        </div>
       )}
     </div>
   );
