@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { refactorName } from "../../util/string_utils";
 import Abilities from "../abilities/Abilities";
-import SkinList from "../skinList/SkinList";
+import SwipeableTextMobileStepper from "../skinList/SkinList";
 import YoutubeEmbed from "../spotlightVideo/SpotlightVideo";
 
 import "./ChampionDetail.scss";
@@ -55,7 +55,7 @@ function ChampionDetail() {
           <h3>Skins</h3>
 
           <div className="champDetail_skins">
-            <SkinList champName={champName} skins={championData.skins} />
+            <SwipeableTextMobileStepper champName={champName} skins={championData.skins} />
           </div>
         </div>
       )}

@@ -29,7 +29,9 @@ function Abilities({ abilityData, passiveData }) {
         <img
           src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/passive/${passiveData.image.full}`}
         />
-        <div>{passiveData.name}</div>
+        <div>
+          <strong>{passiveData.name}</strong>
+        </div>
         <div>{passiveData.description}</div>
       </div>
 
@@ -50,7 +52,9 @@ function Abilities({ abilityData, passiveData }) {
         })}
       </div>
       <div className="championAbility_title">
-        <div>{abilityTitle}</div>
+        <div>
+          <strong>{abilityTitle}</strong>
+        </div>
         <div>{abilityDescription}</div>
       </div>
     </div>
