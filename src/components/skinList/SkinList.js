@@ -5,7 +5,7 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 export default function SkinList({ champName, skins }) {
   return (
-    <ImageList sx={{ width: 500, height: 500 }}>
+    <ImageList>
       {skins.map((skin) => (
         <ImageListItem key={skin.num}>
           <img
