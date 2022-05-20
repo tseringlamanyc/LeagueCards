@@ -18,8 +18,8 @@ function AllChampion() {
       .then((response) => response.json())
       .then((data) => {
         setAllChamps(Object.values(data.data));
+        setLoading(false);
       });
-    setLoading(false);
   };
 
   useEffect(() => {

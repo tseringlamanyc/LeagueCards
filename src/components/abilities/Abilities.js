@@ -4,7 +4,7 @@ import "./Ability.scss";
 function Abilities({ abilityData, passiveData }) {
   const [abilityTitle, setAbilityTitle] = useState("");
   const [abilityDescription, setAbilityDescription] = useState("");
-  const [selectedStyle, setSelectedStyle] = useState("championAbility__list");
+  const [abilityIndex, setAbilityIndex] = useState(0);
 
   useEffect(() => {
     updateText();
@@ -16,10 +16,7 @@ function Abilities({ abilityData, passiveData }) {
     let desc = abilityData[index].description;
     setAbilityTitle(title);
     setAbilityDescription(desc);
-  };
-
-  const colorSelectedImg = () => {
-    setSelectedStyle("championAbility_selected");
+    setAbilityIndex(Number(index));
   };
 
   return (
@@ -32,21 +29,26 @@ function Abilities({ abilityData, passiveData }) {
         <div>
           <strong>{passiveData.name}</strong>
         </div>
-        <div>{passiveData.description}</div>
+        <div dangerouslySetInnerHTML={{ __html: passiveData.description }} />
       </div>
 
       <h2>Abilites</h2>
 
-      <div className={selectedStyle} onClick={colorSelectedImg}>
+      <div className="championAbility__list">
         {abilityData.map((spell, index) => {
           return (
-            <div key={index}>
-              <div className="championAbility__detail" onClick={(e) => updateText(e)}>
-                <img
-                  id={index}
-                  src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/${spell.image.full}`}
-                />
-              </div>
+            <div
+              key={index}
+              className={
+                abilityIndex === index
+                  ? "championAbility__listItem championAbility__listItem-selected"
+                  : "championAbility__listItem"
+              }
+              onClick={(e) => updateText(e)}>
+              <img
+                id={index}
+                src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/${spell.image.full}`}
+              />
             </div>
           );
         })}
@@ -55,7 +57,7 @@ function Abilities({ abilityData, passiveData }) {
         <div>
           <strong>{abilityTitle}</strong>
         </div>
-        <div>{abilityDescription}</div>
+        <div dangerouslySetInnerHTML={{ __html: abilityDescription }} />
       </div>
     </div>
   );

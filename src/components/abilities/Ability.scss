@@ -1,6 +1,5 @@
 .championAbility {
-  &_passive div,
-  img {
+  &_passive div {
     margin-bottom: 10px;
   }
 
@@ -9,13 +8,10 @@
     gap: 50px;
   }
 
-  &_selected {
-    display: flex;
-    gap: 50px;
-  }
-
-  &_selected img:active {
-    border: 1px solid white;
+  &__listItem {
+    &-selected {
+      border: 1px solid black;
+    }
   }
 
   &__list div {
