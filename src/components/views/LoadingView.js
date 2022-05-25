@@ -2,7 +2,7 @@ import React from "react";
 import "./EmptyList.scss";
 
 function LoadingView() {
-  return <div>Loading...</div>;
+  return <div className="emptyList">Loading...</div>;
 }
 
 export default LoadingView;

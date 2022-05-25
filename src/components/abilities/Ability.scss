@@ -8,14 +8,14 @@
     gap: 50px;
   }
 
-  &__listItem {
-    &-selected {
-      border: 1px solid black;
-    }
-  }
-
   &__list div {
     margin-bottom: 10px;
+  }
+
+  &__listItem {
+    &-selected {
+      border-bottom: 2px solid red;
+    }
   }
 
   &_title div {
@@ -28,6 +28,10 @@
     &_passive img {
       height: 50px;
       width: 50px;
+    }
+
+    &__list {
+      gap: 30px;
     }
 
     &__detail img {
