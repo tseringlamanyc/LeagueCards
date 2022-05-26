@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ChampionList from "../../components/championList/ChampionList";
 import Navbar from "../../components/navBar/Navbar";
+import SearchBar from "../../components/searchBar/SearchBar";
 import EmptyList from "../../components/views/EmptyList";
 import LoadingView from "../../components/views/LoadingView";
 import { refactorName } from "../../util/string_utils";
@@ -12,8 +13,13 @@ function AllChampion() {
   const [allChamps, setAllChamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredChamps, setFilteredChamps] = useState([]);
+  const [role, setRole] = useState(0);
 
-  const fetChamps = () => {
+  useEffect(() => {
+    fetchChamps();
+  }, []);
+
+  const fetchChamps = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -21,10 +27,6 @@ function AllChampion() {
         setLoading(false);
       });
   };
-
-  useEffect(() => {
-    fetChamps();
-  }, []);
 
   useEffect(() => {
     if (searchTerm) {
@@ -40,9 +42,14 @@ function AllChampion() {
     }
   }, [searchTerm]);
 
+  useEffect(() => {
+    console.log(role);
+  }, [role]);
+
   return (
     <div>
-      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Navbar />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} champRole={role} />
 
       {loading && <LoadingView />}
 

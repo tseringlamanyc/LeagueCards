@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -14,7 +15,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function SwipeableTextMobileStepper({ champName, skins }) {
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
   const maxSteps = skins.length;
 
   const handleNext = () => {
@@ -31,7 +32,7 @@ function SwipeableTextMobileStepper({ champName, skins }) {
 
   return (
     <div className="championSkin">
-      <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
+      <Box sx={{ maxWidth: 1100, flexGrow: 1 }}>
         <Paper
           square
           elevation={0}
@@ -58,7 +59,8 @@ function SwipeableTextMobileStepper({ champName, skins }) {
                   component="img"
                   sx={{
                     display: "block",
-                    maxWidth: 900,
+                    maxWidth: 1100,
+                    maxHeight: 600,
                     overflow: "hidden",
                     width: "100%",
                   }}

@@ -6,6 +6,9 @@ function Abilities({ abilityData, passiveData }) {
   const [abilityDescription, setAbilityDescription] = useState("");
   const [abilityIndex, setAbilityIndex] = useState(0);
 
+  const keystroke = ["Q", "W", "E", "R"];
+  const [abilityKey, setAbilityKey] = useState(keystroke[0]);
+
   useEffect(() => {
     updateText();
   }, []);
@@ -14,9 +17,11 @@ function Abilities({ abilityData, passiveData }) {
     let index = e?.target?.id || 0;
     let title = abilityData[index].name;
     let desc = abilityData[index].description;
+    let aKey = keystroke[index];
     setAbilityTitle(title);
     setAbilityDescription(desc);
     setAbilityIndex(Number(index));
+    setAbilityKey(aKey);
   };
 
   return (
@@ -55,7 +60,10 @@ function Abilities({ abilityData, passiveData }) {
       </div>
       <div className="championAbility_title">
         <div>
-          <strong>{abilityTitle}</strong>
+          <span>{abilityKey}</span>
+          <span>
+            <strong>{abilityTitle}</strong>
+          </span>
         </div>
         <div dangerouslySetInnerHTML={{ __html: abilityDescription }} />
       </div>

@@ -44,11 +44,18 @@ function ChampionDetail() {
           </div>
 
           <div className="champDetail_name">
-            <h4>{championData.title}</h4>
-            <h2>{championData.name}</h2>
+            <span className="title">{championData.title.toUpperCase()}</span>
+            <span className="firstname">{championData.name.toUpperCase()}</span>
           </div>
 
-          <div className="champDetail_lore">{championData.lore}</div>
+          <div className="champDetail_info">
+            <div className="role">
+              <span>Role</span>
+              <span>{championData.tags[0]}</span>
+            </div>
+            <div className="line"></div>
+            <div className="lore">{championData.lore}</div>
+          </div>
 
           <Abilities abilityData={championData.spells} passiveData={championData.passive} />
 

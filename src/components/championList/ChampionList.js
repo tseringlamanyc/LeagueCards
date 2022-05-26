@@ -4,10 +4,12 @@ import "./ChampionList.scss";
 
 function ChampionList({ champions }) {
   return (
-    <div className="champList">
-      {champions.map((champion) => {
-        return <ChampionCard champion={champion} key={champion.key} />;
-      })}
+    <div>
+      <div className="champList">
+        {champions.map((champion) => {
+          return <ChampionCard champion={champion} key={champion.key} />;
+        })}
+      </div>
     </div>
   );
 }

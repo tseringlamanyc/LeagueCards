@@ -18,8 +18,15 @@
     }
   }
 
-  &_title div {
-    margin-bottom: 10px;
+  &_title {
+    div {
+      display: grid;
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-weight: 200;
+    }
   }
 }
 

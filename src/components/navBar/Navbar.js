@@ -1,4 +1,3 @@
-//
 import React from "react";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,7 +8,9 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="navbar_logo">LOGO</div>
+      <div className="navbar_logo">
+        <img src="myavatar.png" />
+      </div>
 
       <div className={isExpanded ? "navbar_items navbar_items-expanded" : "navbar_items"}>
         <ul>
