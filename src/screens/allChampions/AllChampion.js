@@ -6,13 +6,13 @@ import EmptyList from "../../components/views/EmptyList";
 import LoadingView from "../../components/views/LoadingView";
 import { refactorName } from "../../util/string_utils";
 
-const url = "https://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion.json";
+const url = "https://ddragon.leagueoflegends.com/cdn/12.10.1/data/en_US/champion.json";
 
 function AllChampion() {
   const [loading, setLoading] = useState(true);
   const [allChamps, setAllChamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredChamps, setFilteredChamps] = useState([]);
+  const [champRole, setChampRole] = useState("All");
 
   useEffect(() => {
     fetchChamps();
@@ -27,36 +27,33 @@ function AllChampion() {
       });
   };
 
-  useEffect(() => {
-    if (searchTerm) {
-      let filteredChampsList = [...allChamps];
-
-      filteredChampsList = filteredChampsList.filter((champ) => {
+  let searchedChamps = searchTerm.length
+    ? allChamps.filter((champ) => {
         return refactorName(champ.name).toLowerCase().includes(searchTerm.toLowerCase());
-      });
+      })
+    : allChamps;
 
-      setFilteredChamps(filteredChampsList);
-    } else {
-      setFilteredChamps([]);
-    }
-  }, [searchTerm]);
+  let taggedChamps =
+    champRole === "All"
+      ? searchedChamps
+      : searchedChamps.filter((champ) => {
+          return champ.tags[0] === champRole;
+        });
 
   return (
     <div>
       <Navbar />
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        setChampRole={setChampRole}
+      />
 
       {loading && <LoadingView />}
 
-      {!loading && searchTerm.length > 0 && filteredChamps.length > 0 && (
-        <ChampionList champions={filteredChamps} />
-      )}
+      {!loading && taggedChamps.length === 0 && <EmptyList searchTerm={searchTerm} />}
 
-      {!loading && searchTerm.length > 0 && filteredChamps.length === 0 && (
-        <EmptyList searchTerm={searchTerm} />
-      )}
-
-      {allChamps.length > 0 && !searchTerm && <ChampionList champions={allChamps} />}
+      {taggedChamps.length > 0 && <ChampionList champions={taggedChamps} />}
     </div>
   );
 }

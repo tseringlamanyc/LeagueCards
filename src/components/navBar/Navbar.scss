@@ -9,6 +9,11 @@
   top: 0;
   z-index: 1;
 
+  &_logo img {
+    height: auto;
+    width: 35px;
+  }
+
   &_items {
     ul {
       display: flex;

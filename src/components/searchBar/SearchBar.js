@@ -3,8 +3,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./SearchBar.scss";
 
-function SearchBar({ searchTerm, setSearchTerm, champRole }) {
-  const allRoles = ["All", "Assassin", "Fighter", "Mage", "Marksmen", "Support"];
+function SearchBar({ searchTerm, setSearchTerm, setChampRole }) {
+  const allRoles = ["All", "Assassin", "Fighter", "Mage", "Marksman", "Support"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [droppedDown, setDroppedDown] = useState(false);
 
@@ -14,7 +14,8 @@ function SearchBar({ searchTerm, setSearchTerm, champRole }) {
 
   const updateRole = (e) => {
     let role = e?.target?.id || 0;
-    setRoleIndex(Number(role));
+    setChampRole(allRoles[role]);
+    setRoleIndex(role);
   };
 
   return (
@@ -29,25 +30,18 @@ function SearchBar({ searchTerm, setSearchTerm, champRole }) {
           }}></input>
       </div>
 
-      <div className={droppedDown ? "bar_roles bar_roles-expanded" : "bar_roles"}>
+      <div className="bar_roles">
         {allRoles.map((role, index) => {
+          console.log(roleIndex, index);
           return (
             <div
               key={index}
-              className={roleIndex === index ? "role-selected" : "role"}
+              className={roleIndex == index ? "role-selected" : "role"}
               onClick={(e) => updateRole(e)}>
               <div id={index}>{role}</div>
             </div>
           );
         })}
-      </div>
-
-      <div
-        className="bar_dropdown"
-        onClick={(e) => {
-          setDroppedDown(!droppedDown);
-        }}>
-        <ArrowDropDownIcon />
       </div>
     </div>
   );
