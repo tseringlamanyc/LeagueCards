@@ -13,7 +13,6 @@ function AllChampion() {
   const [allChamps, setAllChamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredChamps, setFilteredChamps] = useState([]);
-  const [role, setRole] = useState(0);
 
   useEffect(() => {
     fetchChamps();
@@ -42,14 +41,10 @@ function AllChampion() {
     }
   }, [searchTerm]);
 
-  useEffect(() => {
-    console.log(role);
-  }, [role]);
-
   return (
     <div>
       <Navbar />
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} champRole={role} />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {loading && <LoadingView />}
 

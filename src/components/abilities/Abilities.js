@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import "./Ability.scss";
 
 function Abilities({ abilityData, passiveData }) {
@@ -58,6 +59,7 @@ function Abilities({ abilityData, passiveData }) {
           );
         })}
       </div>
+
       <div className="championAbility_title">
         <div>
           <span>{abilityKey}</span>
@@ -65,6 +67,7 @@ function Abilities({ abilityData, passiveData }) {
             <strong>{abilityTitle}</strong>
           </span>
         </div>
+
         <div dangerouslySetInnerHTML={{ __html: abilityDescription }} />
       </div>
     </div>

@@ -29,7 +29,7 @@ function SearchBar({ searchTerm, setSearchTerm, champRole }) {
           }}></input>
       </div>
 
-      <div className="bar_roles">
+      <div className={droppedDown ? "bar_roles bar_roles-expanded" : "bar_roles"}>
         {allRoles.map((role, index) => {
           return (
             <div
@@ -42,7 +42,11 @@ function SearchBar({ searchTerm, setSearchTerm, champRole }) {
         })}
       </div>
 
-      <div className="bar_dropdown">
+      <div
+        className="bar_dropdown"
+        onClick={(e) => {
+          setDroppedDown(!droppedDown);
+        }}>
         <ArrowDropDownIcon />
       </div>
     </div>

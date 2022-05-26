@@ -26,6 +26,7 @@
     display: flex;
     gap: 10px;
     justify-content: space-between;
+    padding-bottom: 15px;
 
     .role {
       display: grid;
@@ -36,12 +37,17 @@
 
     .line {
       border-left: 1px solid rgba(128, 128, 128, 0.499);
-      height: 100px;
+      height: auto;
     }
 
     .lore {
       margin: auto 0;
     }
+  }
+
+  &_tips {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.177);
   }
 
   &_abilities {
@@ -55,6 +61,14 @@
   &_skins {
     display: flex;
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .champDetail {
+    &_tips {
+      display: none;
+    }
   }
 }
 
@@ -79,6 +93,12 @@
       .lore {
         text-align: center;
       }
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.177);
+    }
+
+    &_tips {
+      display: none;
     }
   }
 }
