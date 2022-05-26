@@ -42,14 +42,20 @@
       .icon {
         display: none;
       }
+
+      input {
+        border: hidden;
+        width: 100%;
+      }
+
+      input:focus {
+        outline: none;
+        border-bottom: none;
+      }
     }
     &_roles {
       div {
         display: none;
-      }
-
-      &-expanded {
-        display: block;
       }
     }
   }
