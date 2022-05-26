@@ -8,6 +8,7 @@
 
   &_search {
     display: flex;
+    gap: 5px;
 
     input {
       border: hidden;
@@ -39,8 +40,13 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
   .bar {
+    &_search {
+      .icon {
+        display: none;
+      }
+    }
     &_roles {
       div {
         position: absolute;

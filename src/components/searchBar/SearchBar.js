@@ -20,7 +20,7 @@ function SearchBar({ searchTerm, setSearchTerm, champRole }) {
   return (
     <div className="bar">
       <div className="bar_search">
-        <SearchIcon />
+        <SearchIcon className="icon" />
         <input
           placeholder="Search"
           value={searchTerm}
