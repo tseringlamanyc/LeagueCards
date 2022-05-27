@@ -14,18 +14,18 @@ function AllChampion() {
   const [searchTerm, setSearchTerm] = useState("");
   const [champRole, setChampRole] = useState("All");
 
-  useEffect(() => {
-    fetchChamps();
-  }, []);
+  // useEffect(() => {
+  //   fetchChamps();
+  // }, []);
 
-  const fetchChamps = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setAllChamps(Object.values(data.data));
-        setLoading(false);
-      });
-  };
+  // const fetchChamps = () => {
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setAllChamps(Object.values(data.data));
+  //       setLoading(false);
+  //     });
+  // };
 
   let searchedChamps = searchTerm.length
     ? allChamps.filter((champ) => {
