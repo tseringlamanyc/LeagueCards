@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./SearchBar.scss";
 
 function SearchBar({ searchTerm, setSearchTerm, setChampRole }) {
   const allRoles = ["All", "Assassin", "Fighter", "Mage", "Marksman", "Support"];
   const [roleIndex, setRoleIndex] = useState(0);
-  const [droppedDown, setDroppedDown] = useState(false);
 
   useEffect(() => {
     updateRole();
-  }, []);
+  });
 
   const updateRole = (e) => {
     let role = e?.target?.id || 0;

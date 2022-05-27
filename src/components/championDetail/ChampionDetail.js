@@ -36,7 +36,7 @@ function ChampionDetail() {
       .then((data) => {
         setChampionData(data.data[champName]);
       });
-  }, []);
+  });
 
   return (
     <div className="champDetail">

@@ -12,7 +12,7 @@ function Abilities({ abilityData, passiveData }) {
 
   useEffect(() => {
     updateText();
-  }, []);
+  });
 
   const updateText = (e) => {
     let index = e?.target?.id || 0;
@@ -31,6 +31,7 @@ function Abilities({ abilityData, passiveData }) {
       <div className="championAbility_passive">
         <img
           src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/passive/${passiveData.image.full}`}
+          alt="PassivePic"
         />
         <div>
           <strong>{passiveData.name}</strong>
@@ -54,6 +55,7 @@ function Abilities({ abilityData, passiveData }) {
               <img
                 id={index}
                 src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/${spell.image.full}`}
+                alt="AlbilityPic"
               />
             </div>
           );
