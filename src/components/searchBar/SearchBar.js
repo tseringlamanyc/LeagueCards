@@ -15,7 +15,7 @@ function SearchBar({ searchTerm, setSearchTerm, setChampRole }) {
   const updateRole = (e) => {
     let role = e?.target?.id || 0;
     setChampRole(allRoles[role]);
-    setRoleIndex(role);
+    setRoleIndex(Number(role));
   };
 
   return (
@@ -36,7 +36,7 @@ function SearchBar({ searchTerm, setSearchTerm, setChampRole }) {
           return (
             <div
               key={index}
-              className={roleIndex == index ? "role-selected" : "role"}
+              className={roleIndex === index ? "role-selected" : "role"}
               onClick={(e) => updateRole(e)}>
               <div id={index}>{role}</div>
             </div>

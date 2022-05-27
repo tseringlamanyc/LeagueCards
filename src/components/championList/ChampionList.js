@@ -7,7 +7,7 @@ function ChampionList({ champions }) {
     <div>
       <div className="champList">
         {champions.map((champion) => {
-          return <ChampionCard champion={champion} key={champion.key} />;
+          return <ChampionCard champion={champion} />;
         })}
       </div>
     </div>
