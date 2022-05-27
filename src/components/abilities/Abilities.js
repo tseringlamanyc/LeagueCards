@@ -12,7 +12,7 @@ function Abilities({ abilityData, passiveData }) {
 
   useEffect(() => {
     updateText();
-  });
+  }, []);
 
   const updateText = (e) => {
     let index = e?.target?.id || 0;

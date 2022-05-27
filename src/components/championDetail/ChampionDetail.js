@@ -28,7 +28,7 @@ function ChampionDetail() {
       .then((data) => {
         setEmbed(data["champions"][champName].embed);
       });
-  });
+  }, []);
 
   useEffect(() => {
     fetch(url)
@@ -36,7 +36,7 @@ function ChampionDetail() {
       .then((data) => {
         setChampionData(data.data[champName]);
       });
-  });
+  }, []);
 
   return (
     <div className="champDetail">

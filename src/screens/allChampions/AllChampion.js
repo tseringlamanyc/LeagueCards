@@ -14,24 +14,27 @@ function AllChampion() {
   const [searchTerm, setSearchTerm] = useState("");
   const [champRole, setChampRole] = useState("All");
 
-  // useEffect(() => {
-  //   fetchChamps();
-  // }, []);
+  const fetchChamps = () => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setAllChamps(Object.values(data.data));
+        setLoading(false);
+      });
+  };
 
-  // const fetchChamps = () => {
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setAllChamps(Object.values(data.data));
-  //       setLoading(false);
-  //     });
-  // };
+  useEffect(() => {
+    fetchChamps();
+    console.log("fetch");
+  }, [allChamps]);
+
+  let allChampsCopy = [...allChamps];
 
   let searchedChamps = searchTerm.length
-    ? allChamps.filter((champ) => {
+    ? allChampsCopy.filter((champ) => {
         return refactorName(champ.name).toLowerCase().includes(searchTerm.toLowerCase());
       })
-    : allChamps;
+    : allChampsCopy;
 
   let taggedChamps =
     champRole === "All"
@@ -39,6 +42,8 @@ function AllChampion() {
       : searchedChamps.filter((champ) => {
           return champ.tags[0] === champRole;
         });
+
+  console.log("Here");
 
   return (
     <div>

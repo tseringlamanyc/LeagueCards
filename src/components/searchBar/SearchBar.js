@@ -8,10 +8,10 @@ function SearchBar({ searchTerm, setSearchTerm, setChampRole }) {
 
   useEffect(() => {
     updateRole();
-  });
+  }, []);
 
   const updateRole = (e) => {
-    let role = e?.target?.id || 0;
+    let role = e?.target?.id || roleIndex;
     setChampRole(allRoles[role]);
     setRoleIndex(Number(role));
   };
@@ -30,7 +30,6 @@ function SearchBar({ searchTerm, setSearchTerm, setChampRole }) {
 
       <div className="bar_roles">
         {allRoles.map((role, index) => {
-          console.log(roleIndex, index);
           return (
             <div
               key={index}
