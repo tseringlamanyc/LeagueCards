@@ -1,28 +1,18 @@
-.modal {
-  &_title {
-    text-align: center;
+.modaltips {
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+
+  span {
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 10px;
   }
-  &_body {
-    display: flex;
-    li {
-      list-style: none;
-    }
-  }
 
-  &_tips {
-    display: flex;
-    gap: 10px;
-    justify-content: space-evenly;
-    padding-bottom: 10px;
-
-    span {
-      font-weight: bolder;
-    }
-
-    .line {
-      border-left: 1px solid rgba(128, 128, 128, 0.499);
-      height: auto;
-    }
+  .line {
+    border-left: 1px solid rgba(128, 128, 128, 0.499);
+    margin: 5px;
+    height: auto;
   }
 }
 

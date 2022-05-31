@@ -1,41 +1,57 @@
-import { Button } from "@mui/material";
 import React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Modal from "@mui/material/Modal";
 import "./Modal.scss";
 
-function Modal({ closeModal, allytips, enemytips }) {
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 550,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  borderRadius: "15px",
+  boxShadow: 24,
+  p: 4,
+};
+
+export default function BasicModal({ allytips, enemytips }) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <div className="modal">
-      <div className="modal_container">
-        <div className="modal_title">
-          <h1>Tips</h1>
-        </div>
+    <div>
+      <Button onClick={handleOpen} variant="outlined">
+        Tips
+      </Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <Box sx={style}>
+          <div className="modaltips">
+            <div className="ally">
+              <span>Ally-Tips</span>
+              {allytips.map((tip) => {
+                return <li>{tip}</li>;
+              })}
+            </div>
 
-        <div className="modal_tips">
-          <div className="ally">
-            <span>Ally-Tips</span>
-            {allytips.map((tip) => {
-              return <li>{tip}</li>;
-            })}
+            <div className="line"></div>
+
+            <div className="enemy">
+              <span>Enemy-Tips</span>
+              {enemytips.map((tip) => {
+                return <li>{tip}</li>;
+              })}
+            </div>
           </div>
-
-          <div className="line"></div>
-
-          <div className="enemy">
-            <span>Enemy-Tips</span>
-            {enemytips.map((tip) => {
-              return <li>{tip}</li>;
-            })}
-          </div>
-        </div>
-
-        <div className="modal_footer">
-          <Button variant="contained" color="error" onClick={() => closeModal(false)}>
-            Close
-          </Button>
-        </div>
-      </div>
+        </Box>
+      </Modal>
     </div>
   );
 }
-
-export default Modal;

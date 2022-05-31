@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { refactorName } from "../../util/string_utils";
 import Abilities from "../abilities/Abilities";
-import Modal from "../modal/Modal";
+import BasicModal from "../modal/Modal";
 import SwipeableTextMobileStepper from "../skinList/SkinList";
 import YoutubeEmbed from "../spotlightVideo/SpotlightVideo";
 
@@ -15,7 +15,6 @@ function ChampionDetail() {
 
   const [championData, setChampionData] = useState({});
   const [embed, setEmbed] = useState("");
-  const [showModal, setShowModal] = useState(false);
 
   champName = refactorName(champName);
 
@@ -62,23 +61,11 @@ function ChampionDetail() {
             <div className="lore">{championData.lore}</div>
           </div>
 
-          <div className="champDetail_tips">
-            {championData.allytips.length > 0 && championData.enemytips.length > 0 && (
-              <Button variant="outlined" className="btn" onClick={() => setShowModal(true)}>
-                Tips
-              </Button>
-            )}
-
-            {showModal && (
-              <Modal
-                closeModal={setShowModal}
-                allytips={championData.allytips}
-                enemytips={championData.enemytips}
-              />
-            )}
-          </div>
-
-          <Abilities abilityData={championData.spells} passiveData={championData.passive} />
+          <Abilities
+            abilityData={championData.spells}
+            passiveData={championData.passive}
+            championData={championData}
+          />
 
           <h3>Skins</h3>
 

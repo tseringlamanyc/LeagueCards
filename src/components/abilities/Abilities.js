@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import BasicModal from "../modal/Modal";
 
 import "./Ability.scss";
 
-function Abilities({ abilityData, passiveData }) {
+function Abilities({ abilityData, passiveData, championData }) {
   const [abilityTitle, setAbilityTitle] = useState("");
   const [abilityDescription, setAbilityDescription] = useState("");
   const [abilityIndex, setAbilityIndex] = useState(0);
@@ -12,7 +13,7 @@ function Abilities({ abilityData, passiveData }) {
 
   useEffect(() => {
     updateText();
-  }, [abilityTitle, abilityDescription, abilityIndex, abilityKey]);
+  }, []);
 
   const updateText = (e) => {
     let index = e?.target?.id || 0;
@@ -71,6 +72,12 @@ function Abilities({ abilityData, passiveData }) {
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: abilityDescription }} />
+      </div>
+
+      <div className="champDetail_tips">
+        {championData.allytips.length > 0 && championData.enemytips.length > 0 && (
+          <BasicModal allytips={championData.allytips} enemytips={championData.enemytips} />
+        )}
       </div>
     </div>
   );

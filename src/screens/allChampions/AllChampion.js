@@ -25,8 +25,7 @@ function AllChampion() {
 
   useEffect(() => {
     fetchChamps();
-    console.log("fetch");
-  }, [allChamps]);
+  }, []);
 
   let allChampsCopy = [...allChamps];
 
@@ -42,8 +41,6 @@ function AllChampion() {
       : searchedChamps.filter((champ) => {
           return champ.tags[0] === champRole;
         });
-
-  console.log("Here");
 
   return (
     <div>
