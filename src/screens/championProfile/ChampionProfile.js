@@ -1,10 +1,11 @@
 import React from "react";
 import ChampionDetail from "../../components/championDetail/ChampionDetail";
 import Navbar from "../../components/navBar/Navbar";
+import "./ChampionProfile.scss";
 
 function ChampionProfile() {
   return (
-    <div>
+    <div className="championProfile">
       <Navbar />
       <ChampionDetail />
     </div>
