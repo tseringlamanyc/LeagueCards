@@ -1,9 +1,7 @@
-import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { refactorName } from "../../util/string_utils";
 import Abilities from "../abilities/Abilities";
-import BasicModal from "../modal/Modal";
 import SwipeableTextMobileStepper from "../skinList/SkinList";
 import YoutubeEmbed from "../spotlightVideo/SpotlightVideo";
 
