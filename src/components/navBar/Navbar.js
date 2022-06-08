@@ -18,10 +18,10 @@ function Navbar() {
             <a href="/">Champions</a>
           </li>
           <li>
-            <a href="/">Game</a>
+            <a href="/">Team</a>
           </li>
           <li>
-            <a href="/">About</a>
+            <a href="/">About Me</a>
           </li>
         </ul>
       </div>
