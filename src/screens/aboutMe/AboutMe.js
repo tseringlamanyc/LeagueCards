@@ -1,13 +1,16 @@
 import React from "react";
 import AboutMeCard from "../../components/aboutmeCard/AboutMeCard";
-import AboutMeInfo from "../../components/aboutmeInfo/AboutMeInfo";
+import Navbar from "../../components/navBar/Navbar";
 import "./AboutMe.scss";
 
 function AboutMe() {
   return (
-    <div className="aboutme">
-      <AboutMeCard />
-    </div>
+    <>
+      <Navbar />
+      <div className="aboutme">
+        <AboutMeCard />
+      </div>
+    </>
   );
 }
 

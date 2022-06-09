@@ -35,6 +35,7 @@ function AboutMeCard() {
           </ul>
         </div>
       </div>
+
       <AboutMeInfo />
     </div>
   );

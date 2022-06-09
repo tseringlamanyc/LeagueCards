@@ -28,9 +28,6 @@ function AboutMeInfo() {
           laudantium sapiente impedit!
         </p>
       </div>
-      <div className="credit">
-        Made with <span>❤</span> by <a href="https://www.learningrobo.com/">Learning Robo</a>
-      </div>
     </div>
   );
 }

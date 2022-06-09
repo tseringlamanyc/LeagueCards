@@ -1,10 +1,7 @@
 .about-wrapper {
   height: 100vh;
-  display: flex;
 }
 .about-left {
-  background-color: #21d4fd;
-  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +10,9 @@
   color: #fff;
 }
 .about-left-content > div {
-  background: #12192c;
+  background: black;
   padding: 4rem 4rem 2.5rem 5rem;
   text-align: center;
-
   border-radius: 12px 12px 0 0;
 }
 .about-left-content {
@@ -63,11 +59,12 @@
   display: flex;
   justify-content: center;
   padding: 0.8rem 0;
-  border-radius: 0 0 12px 12px;
+  margin-bottom: 0;
 }
+
 .icons li {
   list-style-type: none;
-  background: #b721ff;
+  background: black;
   color: #fff;
   width: 40px;
   height: 40px;
@@ -80,7 +77,15 @@
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
+
 .icons li:hover {
   background: #edffec;
   color: #000;
+}
+
+@media only screen and (min-width: 400px) {
+  .about-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
 }
