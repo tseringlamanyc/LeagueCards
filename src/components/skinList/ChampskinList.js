@@ -28,6 +28,7 @@ function ChampskinList({ champName, skins }) {
                 <div>
                   <img
                     src={`${`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champName}_${skin.num}.jpg`}`}
+                    loading="lazy"
                   />
                   <div className="skin-name">{skin.name === "default" ? champName : skin.name}</div>
                 </div>
