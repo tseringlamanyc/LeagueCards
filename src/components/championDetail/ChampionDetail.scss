@@ -10,12 +10,6 @@
     font-style: italic;
     margin-bottom: 10px;
 
-    .title {
-      margin: 5px 0;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
     .firstname {
       font-weight: bolder;
       font-size: 70px;
@@ -23,6 +17,7 @@
 
     fieldset {
       text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.5);
     }
 
     legend {
@@ -104,10 +99,10 @@
     }
 
     &_name {
-      .title {
-        margin: 5px 0;
+      legend {
         font-weight: bold;
         font-size: 15px;
+        padding: 0 5px;
       }
 
       .firstname {
