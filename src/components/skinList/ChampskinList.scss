@@ -1,0 +1,31 @@
+.champSkinList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    width: 100%;
+  }
+
+  .skin-name {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .not-active {
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+  .active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.01);
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+}
