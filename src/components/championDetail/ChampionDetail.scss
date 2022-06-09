@@ -20,6 +20,16 @@
       font-weight: bolder;
       font-size: 70px;
     }
+
+    fieldset {
+      text-align: center;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 20px;
+      padding: 0 10px;
+    }
   }
 
   &_info {

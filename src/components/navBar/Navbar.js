@@ -17,11 +17,13 @@ function Navbar() {
           <li>
             <a href="/">Champions</a>
           </li>
+
           <li>
             <a href="/">Team</a>
           </li>
+
           <li>
-            <a href="/">About Me</a>
+            <a href="/about">About Me</a>
           </li>
         </ul>
       </div>

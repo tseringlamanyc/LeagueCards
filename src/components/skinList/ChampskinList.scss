@@ -8,8 +8,15 @@
   }
 
   .skin-name {
+    position: absolute;
     text-align: center;
-    margin-top: 5px;
+    text-transform: uppercase;
+    bottom: 5px;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%;
+    padding: 15px 0 20px 0;
   }
 
   .not-active {
@@ -26,6 +33,7 @@
 .arrows {
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
   padding: 10px;
   cursor: pointer;
 }

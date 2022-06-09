@@ -44,8 +44,10 @@ function ChampionDetail() {
           </div>
 
           <div className="champDetail_name">
-            <span className="title">{championData.title.toUpperCase()}</span>
-            <span className="firstname">{championData.name.toUpperCase()}</span>
+            <fieldset>
+              <legend>{championData.title.toUpperCase()}</legend>
+              <span className="firstname">{championData.name.toUpperCase()}</span>
+            </fieldset>
           </div>
 
           <div className="champDetail_info">

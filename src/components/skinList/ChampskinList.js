@@ -8,14 +8,14 @@ import "./ChampskinList.scss";
 
 function ChampskinList({ champName, skins }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const length = skins.length;
+  const len = skins.length;
 
   const nextSlide = () => {
-    setCurrentIndex(currentIndex === length - 1 ? 0 : currentIndex + 1);
+    setCurrentIndex(currentIndex === len - 1 ? 0 : currentIndex + 1);
   };
 
   const prevSlide = () => {
-    setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
+    setCurrentIndex(currentIndex === 0 ? len - 1 : currentIndex - 1);
   };
 
   return (
