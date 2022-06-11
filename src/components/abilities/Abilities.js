@@ -27,7 +27,7 @@ function Abilities({ abilityData, passiveData, championData }) {
     setAbilityIndex(Number(index));
     setAbilityKey(aKey);
     setAbilityUrl(
-      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0${championData.key}/ability_0${championData.key}_${aKey}1.webm`
+      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0${championData.key}/ability_0${championData.key}_${aKey}1.mp4`
     );
   };
 
