@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BasicModal from "../modal/Modal";
 import AbilityVideo from "./videoComponent/AbilityVideo";
+import { convertChampKey } from "../../util/convertKey";
 import "./Ability.scss";
 
 function Abilities({ abilityData, passiveData, championData }) {
@@ -26,8 +27,9 @@ function Abilities({ abilityData, passiveData, championData }) {
     setAbilityDescription(desc);
     setAbilityIndex(Number(index));
     setAbilityKey(aKey);
+    let convertedKey = convertChampKey(championData.key);
     setAbilityUrl(
-      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0${championData.key}/ability_0${championData.key}_${aKey}1.mp4`
+      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${convertedKey}/ability_${convertedKey}_${aKey}1.webm`
     );
   };
 

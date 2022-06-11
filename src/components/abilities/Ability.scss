@@ -64,15 +64,14 @@
       align-content: end;
       flex-wrap: wrap-reverse;
       padding: 0px;
-      gap: 5px;
     }
 
     &_textSection {
-      min-height: 375px;
+      min-height: 390px;
     }
 
     &_video {
-      min-height: 280px;
+      min-height: 260px;
     }
 
     &_fullSection > * {

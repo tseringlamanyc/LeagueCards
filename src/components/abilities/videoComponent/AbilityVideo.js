@@ -6,11 +6,13 @@ function AbilityVideo({ abilityUrl }) {
     <video
       className="abilityVideo"
       src={abilityUrl}
-      playsinline
-      autoPlay
-      controls
+      autoplay
       loop
-      muted></video>
+      muted
+      controls
+      webkit-playsinline
+      playsinline
+      type="video.webm"></video>
   );
 }
 
