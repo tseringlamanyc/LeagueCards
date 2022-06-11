@@ -23,17 +23,17 @@ function Abilities({ abilityData, passiveData, championData }) {
     let title = abilityData[index].name;
     let desc = abilityData[index].description;
     let aKey = keystroke[index];
+
     setAbilityTitle(title);
     setAbilityDescription(desc);
     setAbilityIndex(Number(index));
     setAbilityKey(aKey);
+
     let convertedKey = convertChampKey(championData.key);
     setAbilityUrl(
       `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${convertedKey}/ability_${convertedKey}_${aKey}1.mp4`
     );
   };
-
-  console.log(abilityUrl);
 
   return (
     <div className="championAbility">

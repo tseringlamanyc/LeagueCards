@@ -36,7 +36,7 @@ function AboutMeCard() {
         </div>
       </div>
 
-      <AboutMeInfo />
+      <AboutMeInfo className="Info" />
     </div>
   );
 }

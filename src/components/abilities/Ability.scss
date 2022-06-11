@@ -24,6 +24,10 @@
     min-height: 400px;
   }
 
+  &_title {
+    animation: fadeInAnimation ease 1s;
+  }
+
   &__list {
     display: flex;
     gap: 50px;
@@ -91,5 +95,14 @@
       height: 50px;
       width: 50px;
     }
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

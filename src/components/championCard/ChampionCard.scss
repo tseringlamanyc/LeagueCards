@@ -1,6 +1,6 @@
 .championCard {
   position: relative;
-  width: 150px;
+  width: 170px;
   margin: 2em;
   display: grid;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -24,6 +24,7 @@
     top: 0;
     left: 0;
     z-index: 99;
+    animation: fadeInAnimation ease 0.5s;
   }
 
   &_name {
@@ -56,5 +57,14 @@
 @media only screen and (max-width: 480px) {
   .championCard {
     width: 200px;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
