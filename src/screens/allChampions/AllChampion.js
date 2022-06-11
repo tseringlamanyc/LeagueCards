@@ -6,6 +6,8 @@ import EmptyList from "../../components/views/EmptyList";
 import LoadingView from "../../components/views/LoadingView";
 import { refactorName } from "../../util/string_utils";
 
+import "./AllChampion.scss";
+
 const url = "https://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json";
 
 function AllChampion() {

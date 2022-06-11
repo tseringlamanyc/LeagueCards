@@ -4,13 +4,11 @@ import "./ChampionList.scss";
 
 function ChampionList({ champions }) {
   return (
-    <>
-      <div className="champList">
-        {champions.map((champion) => {
-          return <ChampionCard champion={champion} />;
-        })}
-      </div>
-    </>
+    <div className="champList" key={Math.random()}>
+      {champions.map((champion) => {
+        return <ChampionCard champion={champion} />;
+      })}
+    </div>
   );
 }
 

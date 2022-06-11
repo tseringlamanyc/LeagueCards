@@ -52,7 +52,7 @@ function Abilities({ abilityData, passiveData, championData }) {
       <h2>Abilites</h2>
 
       <div className="championAbility_fullSection">
-        <div className="championAbility_textSection">
+        <div className="championAbility_textSection" key={Math.random()}>
           <div className="championAbility__list">
             {abilityData.map((spell, index) => {
               return (

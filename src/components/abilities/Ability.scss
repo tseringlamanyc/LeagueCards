@@ -8,6 +8,10 @@
     div {
       margin-bottom: 10px;
     }
+
+    img {
+      border-radius: 5px;
+    }
   }
 
   &_fullSection {
@@ -25,7 +29,7 @@
   }
 
   &_title {
-    animation: fadeInAnimation ease 1s;
+    animation: fadeInAnimation ease 2s;
   }
 
   &__list {
@@ -35,6 +39,10 @@
 
   &__list div {
     margin-bottom: 10px;
+  }
+
+  &__listItem img {
+    border-radius: 5px;
   }
 
   &__listItem {
