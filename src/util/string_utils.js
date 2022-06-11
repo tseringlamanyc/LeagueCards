@@ -26,6 +26,7 @@ const refactorName = (name) => {
     case "RenataGlasc":
       res = "Renata";
       break;
+
     default:
       return res;
   }

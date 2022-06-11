@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BasicModal from "../modal/Modal";
-
+import AbilityVideo from "./videoComponent/AbilityVideo";
 import "./Ability.scss";
 
 function Abilities({ abilityData, passiveData, championData }) {
@@ -10,6 +10,8 @@ function Abilities({ abilityData, passiveData, championData }) {
 
   const keystroke = ["Q", "W", "E", "R"];
   const [abilityKey, setAbilityKey] = useState(keystroke[0]);
+
+  const [abilityUrl, setAbilityUrl] = useState("");
 
   useEffect(() => {
     updateText();
@@ -24,14 +26,19 @@ function Abilities({ abilityData, passiveData, championData }) {
     setAbilityDescription(desc);
     setAbilityIndex(Number(index));
     setAbilityKey(aKey);
+    setAbilityUrl(
+      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0${championData.key}/ability_0${championData.key}_${aKey}1.webm`
+    );
   };
+
+  console.log(abilityUrl);
 
   return (
     <div className="championAbility">
       <h2>Passive</h2>
       <div className="championAbility_passive">
         <img
-          src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/passive/${passiveData.image.full}`}
+          src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/passive/${passiveData.image.full}`}
           alt="PassivePic"
         />
         <div>
@@ -42,36 +49,45 @@ function Abilities({ abilityData, passiveData, championData }) {
 
       <h2>Abilites</h2>
 
-      <div className="championAbility__list">
-        {abilityData.map((spell, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                abilityIndex === index
-                  ? "championAbility__listItem championAbility__listItem-selected"
-                  : "championAbility__listItem"
-              }
-              onClick={(e) => updateText(e)}>
-              <img
-                id={index}
-                src={`http://ddragon.leagueoflegends.com/cdn/12.8.1/img/spell/${spell.image.full}`}
-                alt="AlbilityPic"
-              />
-            </div>
-          );
-        })}
-      </div>
+      <div className="championAbility_fullSection">
+        <div className="championAbility_textSection">
+          <div className="championAbility__list">
+            {abilityData.map((spell, index) => {
+              return (
+                <div
+                  key={index}
+                  className={
+                    abilityIndex === index
+                      ? "championAbility__listItem championAbility__listItem-selected"
+                      : "championAbility__listItem"
+                  }
+                  onClick={(e) => updateText(e)}>
+                  <img
+                    id={index}
+                    src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/spell/${spell.image.full}`}
+                    alt="AlbilityPic"
+                  />
+                </div>
+              );
+            })}
+          </div>
 
-      <div className="championAbility_title">
-        <div>
-          <span>{abilityKey}</span>
-          <span>
-            <strong>{abilityTitle}</strong>
-          </span>
+          <div className="championAbility_title">
+            <div>
+              <span>{abilityKey}</span>
+              <span>
+                <strong>{abilityTitle}</strong>
+              </span>
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: abilityDescription }} />
+          </div>
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: abilityDescription }} />
+        <div className="championAbility_videoSection">
+          <div className="championAbility_video">
+            <AbilityVideo abilityUrl={abilityUrl} />
+          </div>
+        </div>
       </div>
 
       <div className="champDetail_tips">

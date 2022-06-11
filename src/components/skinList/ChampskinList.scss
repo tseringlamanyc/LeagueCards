@@ -41,13 +41,13 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 480px) {
   .champSkinList {
-    min-height: 200px;
+    min-height: 250px;
 
     & img {
       width: 100%;
-      height: 200px;
+      height: 250px;
     }
   }
 }

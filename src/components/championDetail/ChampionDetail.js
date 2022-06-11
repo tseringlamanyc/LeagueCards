@@ -16,7 +16,7 @@ function ChampionDetail() {
 
   champName = refactorName(champName);
 
-  let url = `https://ddragon.leagueoflegends.com/cdn/12.10.1/data/en_US/champion/${champName}.json`;
+  let url = `https://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion/${champName}.json`;
   let videoEndpoint = `https://league-backend-video.herokuapp.com/data`;
 
   useEffect(() => {
