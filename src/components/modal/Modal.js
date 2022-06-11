@@ -41,8 +41,6 @@ export default function BasicModal({ allytips, enemytips }) {
               })}
             </div>
 
-            <div className="line"></div>
-
             <div className="enemy">
               <span>Enemy-Tips</span>
               {enemytips.map((tip) => {

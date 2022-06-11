@@ -1,6 +1,7 @@
 .modaltips {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  padding: 10px;
   justify-content: space-evenly;
 
   span {
@@ -9,11 +10,15 @@
     margin-bottom: 10px;
   }
 
-  .line {
-    border-left: 1px solid rgba(128, 128, 128, 0.499);
-    margin: 5px;
+  .ally {
+    border-right: 1px solid rgba(128, 128, 128, 0.499);
+    padding: 5px;
     height: auto;
   }
+}
+
+.modaltips > * {
+  flex-basis: 100%;
 }
 
 @media only screen and (max-width: 670px) {
