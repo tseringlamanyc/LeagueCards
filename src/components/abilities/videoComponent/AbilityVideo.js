@@ -11,8 +11,7 @@ function AbilityVideo({ abilityUrl }) {
       muted
       controls
       webkit-playsinline
-      playsinline
-      type="video.webm"></video>
+      playsinline></video>
   );
 }
 
