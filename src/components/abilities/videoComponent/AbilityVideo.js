@@ -3,7 +3,13 @@ import "./AbilityVideo.scss";
 
 function AbilityVideo({ abilityUrl }) {
   return (
-    <video className="abilityVideo" src={abilityUrl} controls playsInline type="video/mp4"></video>
+    <video
+      className="abilityVideo"
+      src={abilityUrl}
+      autoPlay
+      controls
+      playsInline
+      type="video/mp4"></video>
   );
 }
 
