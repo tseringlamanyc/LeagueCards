@@ -9,9 +9,7 @@ function AbilityVideo({ abilityUrl }) {
       src={abilityUrl}
       autoPlay
       controls
-      playsInline
-      onerror="alert('Could\'nt load video')"
-      type="video/webm"></video>
+      playsInline></video>
   );
 }
 
