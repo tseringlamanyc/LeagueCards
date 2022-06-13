@@ -2,19 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   min-height: 500px;
 
   & img {
     width: 100%;
     height: 500px;
+    border-bottom: 1px solid white;
   }
 
   .skin-name {
     position: absolute;
     text-align: center;
     text-transform: uppercase;
-    bottom: 5px;
+    bottom: 3px;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
     color: #f1f1f1; /* Grey text */

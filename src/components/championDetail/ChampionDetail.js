@@ -67,9 +67,10 @@ function ChampionDetail() {
             championData={championData}
           />
 
-          <h3>Avaliable Skins</h3>
-
-          <ChampskinList champName={champName} skins={championData.skins} />
+          <div className="skins">
+            <h3>Avaliable Skins</h3>
+            <ChampskinList champName={champName} skins={championData.skins} />
+          </div>
         </div>
       )}
     </div>

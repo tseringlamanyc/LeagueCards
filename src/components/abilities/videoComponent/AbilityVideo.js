@@ -10,9 +10,8 @@ function AbilityVideo({ abilityUrl }) {
       autoPlay
       controls
       playsInline
-      type="video/mp4">
-      Your Video is Unavaliable
-    </video>
+      onerror="alert('Could\'nt load video')"
+      type="video/webm"></video>
   );
 }
 

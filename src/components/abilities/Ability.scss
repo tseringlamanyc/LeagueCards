@@ -1,9 +1,9 @@
 .championAbility {
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.177);
+  border-bottom: 1px solid rgba(245, 238, 238, 0.177);
 
   &_passive {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.177);
+    border-bottom: 1px solid rgba(245, 238, 238, 0.177);
 
     div {
       margin-bottom: 10px;
@@ -11,6 +11,7 @@
 
     img {
       border-radius: 5px;
+      margin-bottom: 5px;
     }
   }
 
