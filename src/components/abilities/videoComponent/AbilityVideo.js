@@ -9,7 +9,8 @@ function AbilityVideo({ abilityUrl }) {
       src={abilityUrl}
       autoPlay
       controls
-      playsInline></video>
+      playsInline
+      type="video/mp4"></video>
   );
 }
 
