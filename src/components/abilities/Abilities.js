@@ -31,7 +31,7 @@ function Abilities({ abilityData, passiveData, championData }) {
 
     let convertedKey = convertChampKey(championData.key);
     setAbilityUrl(
-      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${convertedKey}/ability_${convertedKey}_${aKey}1.webm`
+      `https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${convertedKey}/ability_${convertedKey}_${aKey}1.mp4`
     );
   };
 
