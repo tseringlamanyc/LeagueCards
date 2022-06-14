@@ -10,6 +10,7 @@ function AbilityVideo({ abilityUrl }) {
       autoPlay
       controls
       playsInline
+      muted
       type="video/mp4"></video>
   );
 }

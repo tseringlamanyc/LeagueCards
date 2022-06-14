@@ -8,11 +8,6 @@
     div {
       margin-bottom: 10px;
     }
-
-    img {
-      border-radius: 5px;
-      margin-bottom: 5px;
-    }
   }
 
   &_fullSection {
@@ -29,10 +24,6 @@
     min-height: 400px;
   }
 
-  &_title {
-    animation: fadeInAnimation ease 2s;
-  }
-
   &__list {
     display: flex;
     gap: 50px;
@@ -40,10 +31,6 @@
 
   &__list div {
     margin-bottom: 10px;
-  }
-
-  &__listItem img {
-    border-radius: 5px;
   }
 
   &__listItem {
@@ -64,7 +51,32 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .championAbility {
+    &_fullSection {
+      display: flex;
+      flex-direction: row-reverse;
+      align-content: end;
+      flex-wrap: wrap-reverse;
+      padding: 0px;
+    }
+
+    &_textSection {
+      margin-top: 8px;
+      min-height: 370px;
+    }
+
+    &_video {
+      max-height: 490px;
+    }
+
+    &__list {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .championAbility {
     &_passive img {
       height: 50px;
@@ -80,6 +92,7 @@
     }
 
     &_textSection {
+      margin-top: 8px;
       min-height: 390px;
     }
 
@@ -104,14 +117,5 @@
       height: 50px;
       width: 50px;
     }
-  }
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

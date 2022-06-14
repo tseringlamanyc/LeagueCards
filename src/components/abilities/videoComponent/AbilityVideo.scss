@@ -4,9 +4,19 @@
   margin-left: 10%;
   padding: 0;
   animation: fadeInAnimation ease 1s;
+  object-fit: contain;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .abilityVideo {
+    width: 100%;
+    min-height: 490px;
+    margin-left: 0px;
+    object-fit: fill;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .abilityVideo {
     width: 100%;
     min-height: 250px;
