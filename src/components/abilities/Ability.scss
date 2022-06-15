@@ -62,7 +62,7 @@
     }
 
     &_textSection {
-      margin-top: 8px;
+      margin-top: 15px;
       min-height: 370px;
     }
 
@@ -81,6 +81,7 @@
     &_passive img {
       height: 50px;
       width: 50px;
+      margin-bottom: 5px;
     }
 
     &_fullSection {
@@ -106,7 +107,7 @@
 
     &__list {
       justify-content: space-between;
-
+      gap: 35px;
       img {
         height: 50px;
         width: 50px;
