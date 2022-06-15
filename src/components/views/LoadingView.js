@@ -1,8 +1,8 @@
 import React from "react";
-import "./EmptyList.scss";
+import "./LoadingView.scss";
 
 function LoadingView() {
-  return <div className="emptyList">Loading...</div>;
+  return <div className="loadingView"></div>;
 }
 
 export default LoadingView;

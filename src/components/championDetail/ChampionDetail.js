@@ -38,27 +38,29 @@ function ChampionDetail() {
   return (
     <div className="champDetail">
       {Object.keys(championData).length > 0 && (
-        <div>
+        <>
           <div className="champDetail_video">
             <YoutubeEmbed embed={embed} />
           </div>
 
           <div className="champDetail_name">
+            <div className="nickname">{championData.title.toUpperCase()}</div>
             <fieldset>
-              <legend>{championData.title.toUpperCase()}</legend>
-              <span className="firstname">{championData.name.toUpperCase()}</span>
+              <legend>
+                <span className="firstname">{championData.name.toUpperCase()}</span>
+              </legend>
+
+              <div className="champDetail_info">
+                <div className="role">
+                  <span>Role</span>
+                  <span>{championData.tags[0]}</span>
+                </div>
+
+                <div className="line"></div>
+
+                <div className="lore">{championData.lore}</div>
+              </div>
             </fieldset>
-          </div>
-
-          <div className="champDetail_info">
-            <div className="role">
-              <span>Role</span>
-              <span>{championData.tags[0]}</span>
-            </div>
-
-            <div className="line"></div>
-
-            <div className="lore">{championData.lore}</div>
           </div>
 
           <Abilities
@@ -71,7 +73,7 @@ function ChampionDetail() {
             <h3>Avaliable Skins</h3>
             <ChampskinList champName={champName} skins={championData.skins} />
           </div>
-        </div>
+        </>
       )}
     </div>
   );

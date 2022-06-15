@@ -2,10 +2,9 @@
   max-width: 1300px;
   margin: 10px auto;
   padding: 0 20px;
-  box-shadow: rgba(241, 238, 238, 0.19) 0px 10px 20px, rgba(241, 238, 238, 0.19) 0px 6px 6px;
 
   & > * {
-    margin: 0px 10px;
+    margin: 0px 70px;
   }
 
   &_name {
@@ -14,15 +13,20 @@
     font-style: italic;
     margin-bottom: 10px;
 
+    .nickname {
+      padding-top: 10px;
+      font-size: 20px;
+    }
+
     .firstname {
-      font-weight: bolder;
+      font-weight: bold;
       font-size: 70px;
     }
 
     fieldset {
       text-align: center;
       border: 1px solid rgba(151, 145, 145, 0.5);
-      margin-top: 15px;
+      margin: 5px auto;
     }
 
     legend {
@@ -32,16 +36,12 @@
     }
   }
 
-  &_video {
-    border: 2px solid white;
-  }
-
   &_info {
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(245, 238, 238, 0.177);
+    padding: 15px;
+    margin: 0 auto;
 
     .role {
       display: grid;
@@ -57,7 +57,7 @@
 
     .lore {
       margin: auto 0;
-      text-align: justify;
+      max-width: 600px;
     }
   }
 
@@ -79,8 +79,12 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .champDetail {
+    & > * {
+      margin: 0px 20px;
+    }
+
     &_info {
       display: grid;
 
@@ -97,6 +101,10 @@
         border-bottom: 1px solid rgba(128, 128, 128, 0.499);
       }
 
+      .lore {
+        padding-top: 5px;
+      }
+
       border-bottom: 1px solid rgba(245, 238, 238, 0.177);
     }
 
@@ -107,8 +115,12 @@
         padding: 0 5px;
       }
 
+      .nickname {
+        font-size: 15px;
+      }
+
       .firstname {
-        font-weight: bolder;
+        font-weight: bold;
         font-size: 40px;
       }
     }

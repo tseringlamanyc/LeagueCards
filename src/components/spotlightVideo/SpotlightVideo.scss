@@ -1,7 +1,8 @@
 .video-responsive {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
+  width: 70%;
+  padding-bottom: 40%;
+  margin: 0 auto;
   height: 0;
 }
 
@@ -11,4 +12,22 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 0 auto;
+    height: 0;
+  }
+
+  .video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

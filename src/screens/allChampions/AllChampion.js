@@ -45,7 +45,7 @@ function AllChampion() {
         });
 
   return (
-    <div>
+    <div className="allChampion">
       <Navbar />
       <SearchBar
         searchTerm={searchTerm}
