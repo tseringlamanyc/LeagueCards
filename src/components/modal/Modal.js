@@ -25,7 +25,7 @@ export default function BasicModal({ allytips, enemytips }) {
 
   return (
     <div>
-      <Button onClick={handleOpen} variant="outlined">
+      <Button onClick={handleOpen} variant="contained">
         Tips
       </Button>
       <Modal

@@ -82,7 +82,7 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .champDetail {
     & > * {
-      margin: 0px 20px;
+      margin: 0px 10px;
     }
 
     &_info {
@@ -92,7 +92,8 @@
         display: grid;
         text-align: center;
         margin: auto 0;
-        font-size: 10px;
+        margin-top: -5px;
+        font-size: 13px;
       }
 
       .line {
@@ -104,7 +105,7 @@
 
       .lore {
         padding-top: 5px;
-        font-size: 10px;
+        font-size: 13px;
         text-align: justify;
       }
 

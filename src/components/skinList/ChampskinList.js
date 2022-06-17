@@ -38,10 +38,10 @@ function ChampskinList({ champName, skins }) {
         })}
       </div>
       <div className="arrows">
-        <Button variant="outlined" startIcon={<ArrowBackIcon />} onClick={prevSlide}>
+        <Button variant="contained" startIcon={<ArrowBackIcon />} onClick={prevSlide}>
           Prev
         </Button>
-        <Button variant="outlined" startIcon={<ArrowForwardIcon />} onClick={nextSlide}>
+        <Button variant="contained" startIcon={<ArrowForwardIcon />} onClick={nextSlide}>
           Next
         </Button>
       </div>
