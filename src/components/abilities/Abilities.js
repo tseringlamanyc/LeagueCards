@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BasicModal from "../modal/Modal";
 import AbilityVideo from "./videoComponent/AbilityVideo";
 import { convertChampKey } from "../../util/convertKey";
+import { patchVersion } from "../../util/patch_version";
 import "./Ability.scss";
 
 function Abilities({ abilityData, passiveData, championData }) {
@@ -40,7 +41,7 @@ function Abilities({ abilityData, passiveData, championData }) {
       <h2>Passive</h2>
       <div className="championAbility_passive">
         <img
-          src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/passive/${passiveData.image.full}`}
+          src={`http://ddragon.leagueoflegends.com/cdn/${patchVersion}/img/passive/${passiveData.image.full}`}
           alt="PassivePic"
         />
         <div className="championAbility_passiveName">
@@ -66,7 +67,7 @@ function Abilities({ abilityData, passiveData, championData }) {
                   onClick={(e) => updateText(e)}>
                   <img
                     id={index}
-                    src={`http://ddragon.leagueoflegends.com/cdn/12.11.1/img/spell/${spell.image.full}`}
+                    src={`http://ddragon.leagueoflegends.com/cdn/${patchVersion}/img/spell/${spell.image.full}`}
                     alt="AlbilityPic"
                   />
                 </div>

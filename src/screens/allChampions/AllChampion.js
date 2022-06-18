@@ -5,10 +5,11 @@ import SearchBar from "../../components/searchBar/SearchBar";
 import EmptyList from "../../components/views/EmptyList";
 import LoadingView from "../../components/views/LoadingView";
 import { refactorName } from "../../util/string_utils";
+import { patchVersion } from "../../util/patch_version";
 
 import "./AllChampion.scss";
 
-const url = "https://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json";
+const url = `https://ddragon.leagueoflegends.com/cdn/${patchVersion}/data/en_US/champion.json`;
 
 function AllChampion() {
   const [loading, setLoading] = useState(true);
