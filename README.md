@@ -1,4 +1,3 @@
 # League Info
 
-#### Website - deployment 
-https://league-card-tsenyk.herokuapp.com/
+Front end heroku link [here](https://league-card-tsenyk.herokuapp.com/).
